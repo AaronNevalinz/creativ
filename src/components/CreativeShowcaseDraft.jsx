@@ -1,6 +1,8 @@
 // HorizontalShowcase.js
 import React from 'react';
 import { motion, useAnimation } from 'framer-motion';
+import AOS from 'aos';
+AOS.init();
 
 const images = [
   // Provide your image URLs here

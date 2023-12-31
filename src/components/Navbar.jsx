@@ -1,3 +1,4 @@
+import React from 'react'
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { IoMdSearch } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
@@ -7,8 +8,8 @@ import image1 from '../assets/image1.jpg';
 import appStore from '../assets/available-on-the-app-store-1.svg';
 import playStore from '../assets/Google_Play-Badge-Logo.wine.svg';
 import { useState, useEffect } from "react";
+import {motion} from 'framer-motion';
 
-import React from 'react'
 
 function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -47,12 +48,13 @@ function Navbar() {
     
 
   return (
-    <div className="relative h-screen w-full">
+    <div className="relative h-screen w-full font-open-sans">
         <div
-            className="absolute top-0 left-0 h-full w-full"
+            className="absolute top-0 left-0 h-full w-full z-0"
         >
             <img src={image1} alt="" className="h-full object-cover w-full"/>
         </div>
+        <div className='absolute top-0 left-0 h-full w-full bg-half-transparent'/>
         {/* mobile navigation menu */}
         <nav className={`fixed w-full top-0 py-2 ${scrolled ? 'backdrop-blur-md' : 'bg-transparent'} nav tablet:hidden`} >
             <div className="flex justify-between px-4 items-center">
@@ -62,7 +64,7 @@ function Navbar() {
                 </div>
                 <div className="flex items-center gap-3 mobile:gap-6">
                     <p className={`${scrolled?'text-black':'text-white'} mobile:text-xl`}>Log in</p>
-                    <button className={`${scrolled?'text-white bg-black':'text-black bg-white'} px-2 py-3 rounded-full mobile:text-xl`}>Get Started</button>
+                    <button className={`${scrolled?'text-white bg-black':'text-black bg-white'} px-4 py-3 rounded-xl mobile:text-xl`}>Get Started</button>
                 </div>
             </div>
             <div className="px-4 relative mobile:mt-4">
@@ -78,11 +80,15 @@ function Navbar() {
                     <img src={image1} className="w-20 laptop:w-24 object-cover rounded-full" alt="" />
                     <p className="text-sm laptop:text-base">Jode Novah is fusing her loves of music, writing and comdey..</p>
                 </div>
-                <div>
-                    <p className="text-6xl text-white font-light mobile:text-8xl laptop:text-[10rem]">Your Wildest</p>
-                </div>
+                <motion.div 
+                    initial={{opacity:0, scale:0.5}}
+                    animate={{opacity:1, scale:1}}
+                    transition={{duration:0.8}}
+                >
+                    <p className="text-4xl text-white font-light mobile:text-6xl laptop:text-[9rem]">Your  Wildest</p>
+                </motion.div>
             </div>
-            <p className="text-6xl text-right text-white font-light mobile:text-8xl laptop:text-[10rem]">
+            <p className="text-4xl text-right text-white font-light mobile:text-6xl laptop:text-[9rem]" data-aos='fade-up'>
                 creative reality
             </p>
         </div>
@@ -132,7 +138,8 @@ function Navbar() {
 
         {/* tablet and desktop navigation */}
         <nav className={`invisible tablet:visible fixed flex items-center justify-between w-full px-6 text-sm laptop:text-base laptop:px8 py-4 ${scrolled?'backdrop-blur-md' : 'bg-transparents z-20'} ${bgWhite?'bg-white':'bg-transparent'} nav`}>
-            <div className="">
+            {/* desktop navigation links */}
+            <div>
                 <ul className="flex gap-2 font-medium laptop:gap-4">
                     <li className="" onMouseEnter={()=>{handleHover('link1'); setBgWhite(true)}} onMouseLeave={()=>{handleLeave('link1'); setBgWhite(false)}}>
                         <a className={`${dropdownStates.link1?'bg-black text-white px-2 py-2 rounded-full':''}`} href="#">Creators</a>
@@ -372,7 +379,7 @@ function Navbar() {
                 </ul>
             </div>
             
-            <div className="font-bold text-lg laptop:text-xl">
+            <div className="font-black text-yellow-900 text-lg laptop:text-3xl">
                 CREATIV
             </div>
 
@@ -389,6 +396,8 @@ function Navbar() {
             </div>  
             
         </nav>
+
+
     </div>
   )
 }

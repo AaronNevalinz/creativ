@@ -12,7 +12,13 @@ module.exports = {
     extend: {
       colors:{
         "bgTransparent":"rgba(0,0,0,0.4)",
-        "color-primary":"#5fc1f1"
+        "color-primary":"#5fc1f1",
+        "half-transparent":"rgba(0,0,0,0.5)",
+        'color-gray':'#EFCDB8',
+        'lightGray':'#959595'
+      },
+      fontFamily:{
+        "open-sans":"Open Sans"
       }
     },
   },
