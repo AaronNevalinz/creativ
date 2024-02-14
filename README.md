@@ -4,6 +4,10 @@
   <a href="https://creativ-app.vercel.app/">Visit the live app</a>
 </h3>
 
+![Frame](https://github.com/AaronNevalinz/creativ/assets/76948733/1996fb40-53b7-4cd0-8b69-5eb4834942d8)
+
+![Screenshot from 2024-02-14 13-22-42](https://github.com/AaronNevalinz/creativ/assets/76948733/5b6ccf4f-0342-44cc-97ef-2dbb9cfcba53)
+
 ## What is this and who is it for 🤷‍♀️
 
 I develop Websites in ReactJs and TailwindCSS, and this is a showcase product I've built in my spare time. It's a very good example of modern, real-world React codebase.
